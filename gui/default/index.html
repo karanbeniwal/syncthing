@@ -17,7 +17,7 @@
   <link rel="shortcut icon" href="assets/img/favicon-{{syncthingStatus()}}.png"/>
   <link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#0882c8"/>
 
-  <title ng-bind="thisDeviceName() + ' | Syncthing'"></title>
+  <title ng-bind="thisDeviceName() + ' | OMsync'"></title>
   <link href="vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
   <link href="vendor/daterangepicker/daterangepicker.css" rel="stylesheet"/>
   <link href="assets/font/raleway.css" rel="stylesheet"/>
@@ -53,7 +53,7 @@
             </div>
             <div class="panel-body">
               <p>
-              The Syncthing admin interface requires JavaScript. Please enable JavaScript in your web browser and try again.
+              The OMsync admin interface requires JavaScript. Please enable JavaScript in your web browser and try again.
               </p>
             </div>
           </div>
@@ -75,7 +75,7 @@
         </span>
         <p class="navbar-text hidden-xs" ng-class="{'hidden-sm':upgradeInfo && upgradeInfo.newer}">{{thisDeviceName()}}</p>
         <ul class="nav navbar-nav navbar-right">
-          <li ng-if="upgradeInfo && upgradeInfo.newer" class="upgrade-newer">
+          <!--<li ng-if="upgradeInfo && upgradeInfo.newer" class="upgrade-newer">
             <button type="button" class="btn navbar-btn btn-primary btn-sm" data-toggle="modal" data-target="#upgrade">
               <span class="fas fa-arrow-circle-up"></span>
               <span class="hidden-xs" translate translate-value-version="{{upgradeInfo.latest}}">Upgrade To {%version%}</span>
@@ -93,7 +93,7 @@
               <span class="fas fa-question-circle"></span>
               <span class="hidden-xs" translate>Help</span>
             </a>
-          </li>
+          </li>-->
           <li class="dropdown action-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
               <span class="fas fa-cog"></span>
@@ -107,13 +107,13 @@
               <li><a href="" ng-click="shutdown()"><span class="fas fa-fw fa-power-off"></span>&nbsp;<span translate>Shutdown</span></a></li>
               <li><a href="" ng-click="restart()"><span class="fas fa-fw fa-refresh"></span>&nbsp;<span translate>Restart</span></a></li>
               <li class="divider" aria-hidden="true"></li>
-              <li class="visible-xs">
+              <!--<li class="visible-xs">
                 <a href="https://docs.syncthing.net/intro/gui.html" target="_blank">
                   <span class="fas fa-fw fa-question-circle"></span>&nbsp;<span translate>Help</span>
                 </a>
               </li>
               <li><a href="" data-toggle="modal" data-target="#about"><span class="far fa-fw fa-heart"></span>&nbsp;<span translate>About</span></a></li>
-              <li class="divider" aria-hidden="true"></li>
+              <li class="divider" aria-hidden="true"></li>-->
               <li><a href="" ng-click="advanced()"><span class="fas fa-fw fa-cogs"></span>&nbsp;<span translate>Advanced</span></a></li>
               <li><a href="" ng-click="logging.show()"><span class="far fa-fw fa-file-alt"></span>&nbsp;<span translate>Logs</span></a></li>
               <li class="divider" aria-hidden="true" ng-if="config.gui.debugging"></li>
@@ -141,7 +141,7 @@
             </div>
             <div class="panel-body">
               <p>
-              <span translate>The Syncthing admin interface is configured to allow remote access without a password.</span>
+              <span translate>The OMsync admin interface is configured to allow remote access without a password.</span>
               <b><span translate>This can easily give hackers access to read and change any files on your computer.</span></b>
               <span translate>Please set a GUI Authentication User and Password in the Settings dialog.</span>
               </p>
@@ -170,7 +170,7 @@
               </h3>
             </div>
             <div class="panel-body">
-              <p translate>The configuration has been saved but not activated. Syncthing must restart to activate the new configuration.</p>
+              <p translate>The configuration has been saved but not activated. OMsync must restart to activate the new configuration.</p>
             </div>
             <div class="panel-footer">
               <button type="button" class="btn btn-sm btn-default pull-right" ng-click="restart()">
@@ -312,7 +312,7 @@
             </div>
             <div class="panel-body">
               <p>
-                <span translate>For the following folders an error occurred while starting to watch for changes. It will be retried every minute, so the errors might go away soon. If they persist, try to fix the underlying issue and ask for help if you can't.</span>&emsp;<a href="https://forum.syncthing.net" target="_blank"><span class="fas fa-question-circle"></span>&nbsp;<span translate>Support</span></a>
+                <span translate>For the following folders an error occurred while starting to watch for changes. It will be retried every minute, so the errors might go away soon. If they persist, try to fix the underlying issue and ask for help if you can't.</span>&emsp;<a href="" target="_blank"><span class="fas fa-question-circle"></span>&nbsp;<span translate>Support</span></a>
               </p>
               <table>
                 <tr ng-repeat="(id, err) in fsWatcherErrorMap()">
@@ -868,7 +868,7 @@
   <!-- Bottom bar -->
 
   <nav class="navbar navbar-default navbar-fixed-bottom">
-    <div class="container">
+    <!--<div class="container">
       <ul class="nav navbar-nav">
         <li><a class="navbar-link" href="https://syncthing.net/" target="_blank"><span class="fas fa-home"></span>&nbsp;<span translate>Home page</span></a></li>
         <li><a class="navbar-link" href="https://docs.syncthing.net/" target="_blank"><span class="fas fa-book"></span>&nbsp;<span translate>Documentation</span></a></li>
@@ -879,7 +879,7 @@
         <li><a class="navbar-link" href="https://github.com/syncthing/syncthing" target="_blank"><span class="fas fa-wrench"></span>&nbsp;<span translate>Source Code</span></a></li>
         <li><a class="navbar-link" href="https://twitter.com/syncthing" target="_blank"><span class="fab fa-twitter"></span>&nbsp;Twitter</a></li>
       </ul>
-    </div>
+    </div>-->
   </nav>
 
   <ng-include src="'syncthing/core/networkErrorDialogView.html'"></ng-include>
